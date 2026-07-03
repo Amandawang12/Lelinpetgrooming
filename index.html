@@ -1,0 +1,1585 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Le Lin 樂林寵物美容｜服務價目</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,500;1,600&family=Noto+Serif+TC:wght@400;500;600;700&family=Noto+Sans+TC:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#F8F1E7;
+    --cream-deep:#F1E6D5;
+    --plum:#4A3B36;
+    --plum-soft:#6E5C54;
+    --rose:#C99A94;
+    --rose-deep:#B67C77;
+    --sage:#8C9A7B;
+    --gold:#AD8A4E;
+    --line:#E4D3C1;
+    --paper:#FFFCF7;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--cream);
+    color:var(--plum);
+    font-family:'Noto Sans TC', sans-serif;
+    -webkit-font-smoothing:antialiased;
+    min-height:100vh;
+  }
+  .bg-texture{
+    position:fixed; inset:0; pointer-events:none; z-index:0;
+    background-image:
+      radial-gradient(circle at 8% 12%, rgba(201,154,148,0.10), transparent 30%),
+      radial-gradient(circle at 92% 8%, rgba(140,154,123,0.10), transparent 32%),
+      radial-gradient(circle at 90% 90%, rgba(201,154,148,0.09), transparent 30%),
+      radial-gradient(circle at 4% 85%, rgba(173,138,78,0.08), transparent 28%);
+  }
+  .wrap{position:relative; z-index:1; max-width:960px; margin:0 auto; padding:0 20px 80px;}
+
+  /* HERO */
+  header.hero{
+    text-align:center;
+    padding:56px 16px 34px;
+    position:relative;
+  }
+  .corner{position:absolute; width:120px; opacity:0.55;}
+  .corner svg{width:100%; height:auto; display:block;}
+  .corner.tl{top:14px; left:0;}
+  .corner.tr{top:14px; right:0; transform:scaleX(-1);}
+  .brand-mark{
+    display:inline-flex; align-items:center; justify-content:center;
+    width:46px; height:46px; border-radius:50%;
+    border:1px solid var(--gold); margin-bottom:18px;
+    color:var(--gold); font-size:18px;
+  }
+  h1.logo{
+    font-family:'Cormorant Garamond', serif;
+    font-style:italic;
+    font-weight:600;
+    font-size:clamp(48px,9vw,76px);
+    color:var(--plum);
+    letter-spacing:1px;
+    line-height:1;
+  }
+  .logo-cn{
+    font-family:'Noto Serif TC', serif;
+    font-weight:600;
+    font-size:clamp(20px,3.4vw,26px);
+    letter-spacing:0.5em;
+    margin-top:10px;
+    color:var(--plum-soft);
+  }
+  .logo-en-sub{
+    font-family:'Cormorant Garamond', serif;
+    font-size:13px;
+    letter-spacing:0.45em;
+    color:var(--rose-deep);
+    margin-top:2px;
+  }
+  .divider{
+    width:64px; height:1px; background:var(--gold);
+    margin:22px auto; opacity:0.6;
+  }
+  .tagline{
+    font-family:'Noto Serif TC', serif;
+    color:var(--plum-soft);
+    font-size:15px;
+    line-height:2;
+    max-width:480px;
+    margin:0 auto;
+  }
+
+  /* TABS */
+  nav.tabs{
+    display:flex;
+    justify-content:center;
+    gap:10px;
+    margin:38px auto 0;
+    flex-wrap:wrap;
+    padding:0 8px;
+  }
+  .tab-btn{
+    font-family:'Noto Serif TC', serif;
+    font-size:15px;
+    font-weight:600;
+    letter-spacing:0.12em;
+    color:var(--plum-soft);
+    background:var(--paper);
+    border:1px solid var(--line);
+    padding:12px 22px;
+    border-radius:999px;
+    cursor:pointer;
+    transition:all .35s ease;
+    position:relative;
+  }
+  .tab-btn .num{
+    font-family:'Cormorant Garamond', serif;
+    font-style:italic;
+    color:var(--rose-deep);
+    margin-right:6px;
+    font-weight:600;
+  }
+  .tab-btn:hover{
+    border-color:var(--rose);
+    transform:translateY(-1px);
+  }
+  .tab-btn.active{
+    background:var(--plum);
+    border-color:var(--plum);
+    color:var(--cream);
+  }
+  .tab-btn.active .num{color:var(--rose);}
+
+  /* PANELS */
+  .panel{display:none; animation:fade .5s ease;}
+  .panel.active{display:block;}
+  @keyframes fade{from{opacity:0; transform:translateY(6px);} to{opacity:1; transform:translateY(0);}}
+
+  .panel-intro{
+    text-align:center;
+    margin:50px 0 30px;
+  }
+  .eyebrow{
+    font-family:'Cormorant Garamond', serif;
+    font-style:italic;
+    color:var(--rose-deep);
+    letter-spacing:0.15em;
+    font-size:16px;
+    margin-bottom:6px;
+  }
+  .panel-title{
+    font-family:'Noto Serif TC', serif;
+    font-weight:700;
+    font-size:clamp(24px,4vw,32px);
+    color:var(--plum);
+  }
+  .panel-sub{
+    font-family:'Noto Serif TC', serif;
+    color:var(--plum-soft);
+    font-size:14px;
+    line-height:1.9;
+    max-width:440px;
+    margin:14px auto 0;
+  }
+
+  /* SERVICE CARDS */
+  .cards{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:16px;
+    margin-bottom:36px;
+  }
+  @media(max-width:760px){.cards{grid-template-columns:1fr;}}
+  .card{
+    background:var(--paper);
+    border:1px solid var(--line);
+    border-radius:14px;
+    padding:26px 22px;
+    position:relative;
+    overflow:hidden;
+  }
+  .card::before{
+    content:"";
+    position:absolute; top:0; left:0; right:0; height:3px;
+    background:linear-gradient(90deg,var(--rose),var(--gold));
+  }
+  .card-icon{
+    width:38px; height:38px;
+    border-radius:50%;
+    display:flex; align-items:center; justify-content:center;
+    background:var(--cream-deep);
+    color:var(--rose-deep);
+    margin-bottom:14px;
+    font-size:16px;
+  }
+  .card h3{
+    font-family:'Noto Serif TC', serif;
+    font-size:18px;
+    margin-bottom:4px;
+    color:var(--plum);
+  }
+  .card .card-note{
+    font-size:12.5px;
+    color:var(--plum-soft);
+    margin-bottom:12px;
+  }
+  .card ul{list-style:none;}
+  .card ul li{
+    font-size:13px;
+    color:var(--plum-soft);
+    padding:5px 0 5px 16px;
+    position:relative;
+    line-height:1.5;
+  }
+  .card ul li::before{
+    content:"·";
+    position:absolute; left:0; top:5px;
+    color:var(--rose-deep);
+    font-weight:700;
+    font-size:16px;
+  }
+
+  /* PRICE TABLES */
+  .price-table-wrap{
+    background:var(--paper);
+    border:1px solid var(--line);
+    border-radius:14px;
+    overflow:hidden;
+    margin-bottom:22px;
+  }
+  table{width:100%; border-collapse:collapse;}
+  thead th{
+    font-family:'Noto Serif TC', serif;
+    font-size:13px;
+    letter-spacing:0.05em;
+    background:var(--plum);
+    color:var(--cream);
+    padding:14px 10px;
+    text-align:center;
+    font-weight:600;
+  }
+  thead th:first-child{text-align:left; padding-left:20px;}
+  tbody td{
+    font-size:13.5px;
+    padding:11px 10px;
+    text-align:center;
+    color:var(--plum-soft);
+    border-bottom:1px solid var(--line);
+  }
+  tbody td:first-child{
+    text-align:left;
+    padding-left:20px;
+    color:var(--plum);
+    font-weight:500;
+    font-family:'Noto Serif TC', serif;
+  }
+  tbody tr:nth-child(even){background:var(--cream-deep);}
+  tbody tr:last-child td{border-bottom:none;}
+  .table-caption{
+    font-family:'Noto Serif TC', serif;
+    font-size:14px;
+    font-weight:600;
+    color:var(--rose-deep);
+    padding:14px 20px 8px;
+  }
+  .foot-note{
+    font-size:12px;
+    color:var(--plum-soft);
+    padding:8px 20px 16px;
+    line-height:1.7;
+  }
+
+  .info-strip{
+    display:flex;
+    gap:14px;
+    flex-wrap:wrap;
+    margin-top:8px;
+  }
+  .info-box{
+    flex:1 1 260px;
+    background:var(--cream-deep);
+    border:1px solid var(--line);
+    border-radius:12px;
+    padding:16px 18px;
+    font-size:12.5px;
+    color:var(--plum-soft);
+    line-height:1.8;
+  }
+  .info-box b{
+    font-family:'Noto Serif TC', serif;
+    color:var(--plum);
+    display:block;
+    margin-bottom:4px;
+    font-size:13.5px;
+  }
+
+  /* SPA PANEL specific accent icons */
+  .spa-cards .card:nth-child(1) .card-icon{background:#F3DEDC; color:#B4645E;}
+  .spa-cards .card:nth-child(2) .card-icon{background:#DCE4E8; color:#5C7A8A;}
+  .spa-cards .card:nth-child(3) .card-icon{background:#E3E8DA; color:#6E8259;}
+
+  /* PROMO PANEL */
+  .promo-hero{
+    background:linear-gradient(160deg, var(--plum) 0%, #5b4941 100%);
+    border-radius:20px;
+    padding:48px 30px;
+    text-align:center;
+    color:var(--cream);
+    position:relative;
+    overflow:hidden;
+    margin-bottom:30px;
+  }
+  .promo-hero::after{
+    content:"";
+    position:absolute; inset:0;
+    background:radial-gradient(circle at 80% 0%, rgba(201,154,148,0.25), transparent 55%);
+  }
+  .promo-hero *{position:relative;}
+  .promo-eyebrow{
+    font-family:'Cormorant Garamond', serif;
+    font-style:italic;
+    color:var(--rose);
+    font-size:16px;
+    letter-spacing:0.1em;
+  }
+  .promo-title{
+    font-family:'Noto Serif TC', serif;
+    font-weight:700;
+    font-size:clamp(28px,5vw,40px);
+    margin:10px 0 6px;
+    letter-spacing:0.06em;
+  }
+  .promo-sub{
+    font-family:'Noto Serif TC', serif;
+    font-size:16px;
+    color:var(--rose);
+    letter-spacing:0.2em;
+    margin-bottom:22px;
+  }
+  .promo-gift-line{
+    font-family:'Noto Serif TC', serif;
+    font-size:16px;
+    margin-bottom:6px;
+    color:var(--cream);
+    opacity:.9;
+  }
+  .promo-value{
+    font-family:'Noto Serif TC', serif;
+    font-weight:700;
+    font-size:clamp(22px,4vw,30px);
+    margin-bottom:6px;
+  }
+  .promo-value-note{
+    font-size:12px;
+    color:var(--rose);
+    letter-spacing:0.05em;
+    margin-bottom:28px;
+  }
+  .promo-pick-label{
+    font-family:'Cormorant Garamond', serif;
+    font-style:italic;
+    font-size:15px;
+    color:var(--rose);
+    margin-bottom:14px;
+    letter-spacing:0.1em;
+  }
+  .promo-options{
+    display:flex; gap:14px; justify-content:center; flex-wrap:wrap;
+    margin-bottom:22px;
+  }
+  .promo-option{
+    background:rgba(255,255,255,0.06);
+    border:1px solid rgba(232,196,196,0.35);
+    border-radius:14px;
+    padding:18px 24px;
+    min-width:190px;
+    text-align:left;
+  }
+  .promo-option h4{
+    font-family:'Noto Serif TC', serif;
+    font-size:15.5px;
+    margin-bottom:4px;
+    color:var(--cream);
+  }
+  .promo-option p{
+    font-size:11.5px;
+    color:rgba(248,241,231,0.7);
+    letter-spacing:0.05em;
+  }
+  .promo-price{
+    font-family:'Noto Serif TC', serif;
+    font-size:15px;
+    color:var(--rose);
+    letter-spacing:0.05em;
+  }
+
+  /* CONTACT FOOTER */
+  footer.contact{
+    margin-top:20px;
+    background:var(--paper);
+    border:1px solid var(--line);
+    border-radius:16px;
+    padding:30px 26px;
+    display:flex;
+    flex-wrap:wrap;
+    gap:20px;
+    justify-content:space-between;
+  }
+  .contact-item{
+    flex:1 1 200px;
+    display:flex;
+    gap:12px;
+    align-items:flex-start;
+  }
+  .contact-icon{
+    width:32px; height:32px; border-radius:50%;
+    background:var(--cream-deep);
+    display:flex; align-items:center; justify-content:center;
+    color:var(--rose-deep);
+    flex-shrink:0;
+    font-size:14px;
+  }
+  .contact-item div b{
+    font-family:'Noto Serif TC', serif;
+    font-size:13px;
+    display:block;
+    color:var(--plum);
+    margin-bottom:2px;
+  }
+  .contact-item div span{
+    font-size:12.5px;
+    color:var(--plum-soft);
+  }
+
+  /* BOOKING FORM */
+  .booking-shell{
+    background:var(--paper);
+    border:1px solid var(--line);
+    border-radius:18px;
+    padding:36px 30px;
+    position:relative;
+    overflow:hidden;
+  }
+  .booking-shell::before{
+    content:"";
+    position:absolute; top:0; left:0; right:0; height:3px;
+    background:linear-gradient(90deg,var(--rose),var(--gold));
+  }
+  .form-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:18px 20px;
+  }
+  @media(max-width:640px){ .form-grid{grid-template-columns:1fr;} }
+  .field{display:flex; flex-direction:column; gap:7px;}
+  .field.full{grid-column:1 / -1;}
+  .field label{
+    font-family:'Noto Serif TC', serif;
+    font-size:13px;
+    font-weight:600;
+    color:var(--plum);
+    letter-spacing:0.03em;
+  }
+  .field label .req{color:var(--rose-deep); margin-left:2px;}
+  .field input, .field select, .field textarea{
+    font-family:'Noto Sans TC', sans-serif;
+    font-size:14px;
+    color:var(--plum);
+    background:var(--cream);
+    border:1px solid var(--line);
+    border-radius:9px;
+    padding:11px 13px;
+    outline:none;
+    transition:border-color .25s ease, box-shadow .25s ease;
+    width:100%;
+  }
+  .field textarea{resize:vertical; min-height:80px; font-family:inherit;}
+  .field input:focus, .field select:focus, .field textarea:focus{
+    border-color:var(--rose-deep);
+    box-shadow:0 0 0 3px rgba(201,154,148,0.18);
+  }
+  .field input:invalid:not(:placeholder-shown){border-color:#c96a6a;}
+
+  .booking-actions{
+    display:flex; flex-wrap:wrap; gap:12px;
+    margin-top:26px;
+  }
+  .btn{
+    font-family:'Noto Serif TC', serif;
+    font-weight:600;
+    font-size:14.5px;
+    letter-spacing:0.06em;
+    padding:14px 26px;
+    border-radius:999px;
+    border:none;
+    cursor:pointer;
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    transition:transform .25s ease, box-shadow .25s ease;
+  }
+  .btn:hover{transform:translateY(-2px);}
+  .btn-primary{
+    background:var(--plum);
+    color:var(--cream);
+    box-shadow:0 6px 18px rgba(74,59,54,0.25);
+  }
+  .btn-secondary{
+    background:transparent;
+    color:var(--plum);
+    border:1px solid var(--line);
+  }
+  .btn-line{
+    background:#06C755;
+    color:#fff;
+  }
+  .booking-hint{
+    font-size:12px;
+    color:var(--plum-soft);
+    margin-top:14px;
+    line-height:1.8;
+  }
+  .form-status{
+    font-size:13px;
+    margin-top:16px;
+    padding:12px 14px;
+    border-radius:10px;
+    background:var(--cream-deep);
+    color:var(--plum-soft);
+    display:none;
+  }
+  .form-status.show{display:block;}
+
+  /* FORM SECTIONS (mirrors paper 預約表) */
+  .form-section{margin-bottom:32px;}
+  .form-section:last-of-type{margin-bottom:0;}
+  .form-section-title{
+    font-family:'Noto Serif TC', serif;
+    font-weight:700;
+    font-size:16px;
+    color:var(--plum);
+    display:flex;
+    align-items:center;
+    gap:12px;
+    margin-bottom:18px;
+  }
+  .form-section-title .num-badge{
+    width:26px; height:26px; border-radius:50%;
+    background:var(--plum); color:var(--cream);
+    display:flex; align-items:center; justify-content:center;
+    font-size:12.5px; flex-shrink:0;
+  }
+  .form-section-title::after{
+    content:"";
+    flex:1;
+    height:1px;
+    background:var(--line);
+  }
+  .choice-group{display:flex; flex-wrap:wrap; gap:10px;}
+  label.choice{
+    display:flex; align-items:center; gap:8px;
+    background:var(--cream);
+    border:1px solid var(--line);
+    border-radius:10px;
+    padding:11px 15px;
+    cursor:pointer;
+    font-size:13.5px;
+    color:var(--plum-soft);
+    transition:all .2s ease;
+    width:fit-content;
+  }
+  label.choice input{accent-color:var(--rose-deep); width:15px; height:15px; flex-shrink:0;}
+  label.choice:has(input:checked){
+    border-color:var(--rose-deep);
+    background:var(--cream-deep);
+    color:var(--plum);
+    font-weight:600;
+  }
+  .spa-block{
+    background:var(--cream-deep);
+    border:1px solid var(--line);
+    border-radius:12px;
+    padding:18px 20px;
+    margin-top:14px;
+    display:none;
+  }
+  .spa-block.show{display:block; animation:fade .35s ease;}
+  .spa-block-title{
+    font-family:'Noto Serif TC', serif;
+    font-weight:600;
+    font-size:14px;
+    color:var(--rose-deep);
+    text-align:center;
+    margin-bottom:4px;
+  }
+  .spa-block-note{
+    font-size:11.5px;
+    color:var(--plum-soft);
+    text-align:center;
+    margin-bottom:12px;
+  }
+  .pickup-address-wrap{margin-top:12px; display:none;}
+  .pickup-address-wrap.show{display:flex;}
+
+  /* FLOATING CTA */
+  .fab-book{
+    position:fixed;
+    right:22px;
+    bottom:22px;
+    z-index:50;
+    background:var(--plum);
+    color:var(--cream);
+    font-family:'Noto Serif TC', serif;
+    font-weight:600;
+    font-size:14px;
+    letter-spacing:0.05em;
+    border:none;
+    border-radius:999px;
+    padding:15px 24px;
+    display:flex;
+    align-items:center;
+    gap:8px;
+    cursor:pointer;
+    box-shadow:0 10px 24px rgba(74,59,54,0.35);
+    transition:transform .25s ease;
+  }
+  .fab-book:hover{transform:translateY(-2px) scale(1.02);}
+  .fab-book .paw{color:var(--rose); font-size:15px;}
+  @media(max-width:600px){
+    .fab-book{right:14px; bottom:14px; padding:13px 18px; font-size:13px;}
+  }
+
+  @media(max-width:600px){
+    .corner{width:70px;}
+    .tab-btn{padding:10px 16px; font-size:13px;}
+    thead th, tbody td{padding:9px 6px; font-size:12px;}
+    thead th:first-child, tbody td:first-child{padding-left:12px;}
+  }
+
+  /* MEMBER PANEL */
+  .member-hero{
+    text-align:center;
+    background:var(--paper);
+    border:1px solid var(--line);
+    border-radius:18px;
+    padding:36px 26px;
+    margin-bottom:30px;
+    position:relative;
+    overflow:hidden;
+  }
+  .member-hero::before{
+    content:"";
+    position:absolute; top:0; left:0; right:0; height:3px;
+    background:linear-gradient(90deg,var(--rose),var(--gold));
+  }
+  .member-badge{
+    display:inline-block;
+    background:var(--rose-deep);
+    color:#fff;
+    font-family:'Noto Serif TC', serif;
+    font-size:12.5px;
+    padding:6px 18px;
+    border-radius:999px;
+    letter-spacing:0.1em;
+    margin-bottom:16px;
+  }
+  .member-price{
+    font-family:'Noto Serif TC', serif;
+    font-weight:700;
+    font-size:clamp(36px,7vw,48px);
+    color:var(--rose-deep);
+    line-height:1;
+  }
+  .member-price small{
+    display:block;
+    font-size:14.5px;
+    color:var(--plum-soft);
+    font-weight:500;
+    margin-top:10px;
+    font-family:'Noto Sans TC', sans-serif;
+  }
+  .member-note{font-size:12px; color:var(--plum-soft); margin-top:6px;}
+  .benefit-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:14px;
+    margin-top:28px;
+    text-align:left;
+  }
+  @media(max-width:640px){.benefit-grid{grid-template-columns:1fr;}}
+  .benefit-box{
+    background:var(--cream-deep);
+    border:1px solid var(--line);
+    border-radius:12px;
+    padding:16px 18px;
+  }
+  .benefit-box .b-icon{font-size:19px; margin-bottom:6px;}
+  .benefit-box h4{
+    font-family:'Noto Serif TC', serif;
+    font-size:14.5px;
+    color:var(--plum);
+    margin-bottom:4px;
+  }
+  .benefit-box p{font-size:12px; color:var(--plum-soft); line-height:1.7;}
+  .referral-strip{
+    margin-top:14px;
+    background:#E3E8DA;
+    border:1px solid var(--line);
+    border-radius:12px;
+    padding:16px 18px;
+    font-size:12.5px;
+    color:var(--plum-soft);
+    text-align:center;
+    line-height:1.8;
+  }
+
+  /* STAFF DASHBOARD */
+  .staff-gate{max-width:340px; margin:0 auto 10px; text-align:center;}
+  .staff-gate .field{margin-bottom:14px;}
+  .staff-toolbar{
+    display:flex; gap:10px; justify-content:center; flex-wrap:wrap;
+    margin:22px 0 8px;
+  }
+  .staff-summary{
+    display:flex; gap:14px; justify-content:center; flex-wrap:wrap;
+    margin-bottom:20px;
+  }
+  .staff-summary .stat{
+    background:var(--paper); border:1px solid var(--line); border-radius:12px;
+    padding:14px 22px; text-align:center; min-width:110px;
+  }
+  .staff-summary .stat .n{
+    font-family:'Noto Serif TC', serif; font-weight:700; font-size:22px; color:var(--rose-deep);
+  }
+  .staff-summary .stat .l{font-size:11.5px; color:var(--plum-soft); margin-top:2px;}
+  .staff-list{display:flex; flex-direction:column; gap:12px;}
+  .staff-card{
+    background:var(--paper); border:1px solid var(--line); border-radius:12px;
+    padding:16px 18px; font-size:12.5px; color:var(--plum-soft); line-height:1.85;
+  }
+  .staff-card .staff-card-head{
+    display:flex; align-items:center; justify-content:space-between; margin-bottom:8px;
+    flex-wrap:wrap; gap:6px;
+  }
+  .staff-card .staff-card-head b{
+    font-family:'Noto Serif TC', serif; color:var(--plum); font-size:14px;
+  }
+  .staff-tag{
+    display:inline-block; font-size:10.5px; padding:3px 10px; border-radius:999px;
+    background:var(--rose-deep); color:#fff; letter-spacing:0.04em;
+  }
+  .staff-tag.member{background:var(--sage);}
+  .staff-card .staff-time{font-size:11px; color:var(--plum-soft); opacity:0.75;}
+  .staff-empty{
+    text-align:center; color:var(--plum-soft); font-size:13px; padding:30px 10px;
+  }
+</style>
+</head>
+<body>
+<div class="bg-texture"></div>
+<div class="wrap">
+
+  <header class="hero">
+    <div class="corner tl"><svg viewBox="0 0 100 100" fill="none"><path d="M5 5 Q30 10 25 35 Q45 20 60 40 Q35 45 40 65" stroke="#C99A94" stroke-width="1.2"/><circle cx="25" cy="35" r="4" fill="#C99A94" opacity="0.5"/><circle cx="40" cy="65" r="3" fill="#8C9A7B" opacity="0.5"/></svg></div>
+    <div class="corner tr"><svg viewBox="0 0 100 100" fill="none"><path d="M5 5 Q30 10 25 35 Q45 20 60 40 Q35 45 40 65" stroke="#C99A94" stroke-width="1.2"/><circle cx="25" cy="35" r="4" fill="#C99A94" opacity="0.5"/><circle cx="40" cy="65" r="3" fill="#8C9A7B" opacity="0.5"/></svg></div>
+
+    <div class="brand-mark">🐾</div>
+    <h1 class="logo">Le Lin</h1>
+    <div class="logo-cn">樂 林 寵 物 美 容</div>
+    <div class="logo-en-sub">PET GROOMING</div>
+    <div class="divider"></div>
+    <p class="tagline">在「樂林」，我們堅持用最溫柔的雙手，細心打理每一位毛孩。<br>從基礎清潔到頂級皮毛養護，讓您的寶貝由內而外散發健康光澤。</p>
+
+    <nav class="tabs">
+      <button class="tab-btn active" data-tab="services"><span class="num">Ⅰ</span>美容服務價目</button>
+      <button class="tab-btn" data-tab="spa"><span class="num">Ⅱ</span>皮膚調理 SPA</button>
+      <button class="tab-btn" data-tab="promo"><span class="num">Ⅲ</span>純手工剪禮遇</button>
+      <button class="tab-btn" data-tab="booking"><span class="num">Ⅳ</span>立即預約</button>
+      <button class="tab-btn" data-tab="member"><span class="num">Ⅴ</span>加入會員</button>
+      <button class="tab-btn" data-tab="staff"><span class="num">Ⅵ</span>店家查詢</button>
+    </nav>
+  </header>
+
+  <!-- PANEL 1: SERVICES -->
+  <section class="panel active" id="services">
+    <div class="panel-intro">
+      <div class="eyebrow">Grooming Menu</div>
+      <div class="panel-title">美容服務價目</div>
+      <p class="panel-sub">三種等級，依毛孩需求層層升級，從基礎清潔到職人純手工剪裁。</p>
+    </div>
+
+    <div class="cards">
+      <div class="card">
+        <div class="card-icon">🐾</div>
+        <h3>經典．小美容</h3>
+        <div class="card-note">細緻洗浴與全身基礎護理，含：</div>
+        <ul>
+          <li>剪指甲</li>
+          <li>清耳朵</li>
+          <li>小修腳型／足緣</li>
+          <li>剪腳趾毛／肛門毛</li>
+          <li>擠肛門腺</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="card-icon">✂️</div>
+        <h3>職人．大美容</h3>
+        <div class="card-note">含小美容所有項目，再升級：</div>
+        <ul>
+          <li>含小美容所有項目</li>
+          <li>職人手工剪精緻臉型</li>
+          <li>電剪剃身體</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="card-icon">🪮</div>
+        <h3>頂級．純手工剪</h3>
+        <div class="card-note">全程手工，呈現細膩蓬鬆感：</div>
+        <ul>
+          <li>含小美容所有項目</li>
+          <li>全身不使用電剪</li>
+          <li>職人專業剪力逐片修剪</li>
+          <li>呈現細膩蓬鬆感</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="price-table-wrap">
+      <div class="table-caption">狗狗與貓咪體型價目表</div>
+      <table>
+        <thead><tr><th>體型</th><th>小美容</th><th>大美容</th><th>純手工剪</th></tr></thead>
+        <tbody>
+          <tr><td>迷你犬（3kg↓）</td><td>$700</td><td>$1,800</td><td>$2,500</td></tr>
+          <tr><td>小型犬（3–5kg）</td><td>$800</td><td>$2,000</td><td>$3,000</td></tr>
+          <tr><td>中小型犬（5–10kg）</td><td>$1,000</td><td>$2,400</td><td>$3,500</td></tr>
+          <tr><td>中型犬（10–16kg）</td><td>$1,200</td><td>$2,600</td><td>$3,800</td></tr>
+          <tr><td>中大型犬（16–22kg）</td><td>$1,600</td><td>$3,200</td><td>$4,200</td></tr>
+          <tr><td>大型犬（22–27kg）</td><td>$2,400</td><td>$4,200</td><td>$5,800</td></tr>
+          <tr><td>特大型犬（27–33kg）</td><td>$3,200</td><td>$5,200</td><td>$7,000</td></tr>
+          <tr><td>短毛貓／長毛貓</td><td>$1,300 / $1,600</td><td>$2,500 / $2,800</td><td>$3,000 / $3,400</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="price-table-wrap">
+      <div class="table-caption">◆ 特殊長毛犬專區</div>
+      <table>
+        <thead><tr><th>體型</th><th>小美容</th><th>大美容</th><th>純手工剪</th></tr></thead>
+        <tbody>
+          <tr><td>中大犬</td><td>$2,600</td><td>$6,000</td><td>$7,800</td></tr>
+          <tr><td>大犬</td><td>$3,600</td><td>$7,500</td><td>$9,000</td></tr>
+          <tr><td>特大犬</td><td>$4,600</td><td>$9,000</td><td>$9,800</td></tr>
+        </tbody>
+      </table>
+      <div class="foot-note">註：特殊長毛犬包含貴賓犬、薩摩耶、哈士奇、黃金獵犬等高毛量犬種。</div>
+    </div>
+
+    <div class="info-strip">
+      <div class="info-box"><b>接送服務</b>6 公里內享有免費接送，超過 6 公里 $30／km。</div>
+      <div class="info-box"><b>小叮嚀</b>全預約制｜專業溫和洗劑｜嚴重打結／跳蚤／咬擊行為視情況收費。</div>
+    </div>
+  </section>
+
+  <!-- PANEL 2: SPA -->
+  <section class="panel" id="spa">
+    <div class="panel-intro">
+      <div class="eyebrow">Coat &amp; Skin Ritual</div>
+      <div class="panel-title">頂級皮膚調理保養 SPA</div>
+      <p class="panel-sub">三款泥膜療程，依毛孩膚況與換毛週期，量身調理。</p>
+    </div>
+
+    <div class="cards spa-cards">
+      <div class="card">
+        <div class="card-icon">🌹</div>
+        <h3>法國玫瑰活膚泥 SPA</h3>
+        <div class="card-note">成分：玫瑰泥／金盞花／酪梨油</div>
+        <p style="font-size:12.5px; color:var(--plum-soft); line-height:1.8;">運用細膩玫瑰泥吸附油脂與濕氣，金盞花舒緩敏感肌，為皮膚形成天然保護膜，讓毛孩重拾乾爽與療癒感。</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🏔️</div>
+        <h3>冰河淨膚排毛泥 SPA</h3>
+        <div class="card-note">成分：冰河泥／瓜拿納／有機廣藿香</div>
+        <p style="font-size:12.5px; color:var(--plum-soft); line-height:1.8;">專為換毛季設計，強力代謝廢毛並調節皮脂，去除異味並減緩肌膚不適，是維持皮毛清爽的首選。</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🌿</div>
+        <h3>阿育吠陀有機草本泥 SPA</h3>
+        <div class="card-note">成分：100% 有機苦楝葉／Mad Farmers 配方</div>
+        <p style="font-size:12.5px; color:var(--plum-soft); line-height:1.8;">食用級草本泥結合天然茶香，代謝深層髒污並鎖定肌膚、抗菌防蟲，將水分鎖進毛鱗片，深層潤澤。</p>
+      </div>
+    </div>
+
+    <div class="price-table-wrap">
+      <div class="table-caption">體型別 SPA 價格一覽</div>
+      <table>
+        <thead><tr><th>體型</th><th>法國玫瑰 SPA</th><th>冰河淨膚 SPA</th><th>阿育吠陀草本 SPA</th></tr></thead>
+        <tbody>
+          <tr><td>迷你犬</td><td>$600</td><td>$600</td><td>$900</td></tr>
+          <tr><td>小型犬</td><td>$850</td><td>$850</td><td>$1,150</td></tr>
+          <tr><td>中小型犬</td><td>$850</td><td>$850</td><td>$1,150</td></tr>
+          <tr><td>中型犬</td><td>$1,100</td><td>$1,100</td><td>$1,400</td></tr>
+          <tr><td>中大型犬</td><td>$1,300</td><td>$1,300</td><td>$1,600</td></tr>
+          <tr><td>大型犬</td><td>$1,500</td><td>$1,500</td><td>$1,800</td></tr>
+          <tr><td>特大型犬</td><td>$1,700</td><td>$1,700</td><td>$2,000</td></tr>
+          <tr><td>貓咪（短毛）</td><td>$700</td><td>$700</td><td>$1,200</td></tr>
+          <tr><td>貓咪（長毛）</td><td>$850</td><td>$850</td><td>$1,400</td></tr>
+          <tr><td>特殊長毛（中大）</td><td>$1,900</td><td>$1,900</td><td>$2,200</td></tr>
+          <tr><td>特殊長毛（大）</td><td>$2,100</td><td>$2,100</td><td>$2,400</td></tr>
+          <tr><td>特殊長毛（特大）</td><td>$2,300</td><td>$2,300</td><td>$2,600</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="info-strip">
+      <div class="info-box"><b>提醒</b>本服務為肌膚深層護理，需搭配小美容或大美容服務。</div>
+    </div>
+  </section>
+
+  <!-- PANEL 3: PROMO -->
+  <section class="panel" id="promo">
+    <div class="panel-intro">
+      <div class="eyebrow">Exclusive Offer</div>
+      <div class="panel-title">純手工剪專屬禮遇</div>
+      <p class="panel-sub">預約頂級純手工剪，即贈頂級 SPA 療程一項。</p>
+    </div>
+
+    <div class="promo-hero">
+      <div class="promo-eyebrow">頂級・純手工剪</div>
+      <div class="promo-title">專屬禮遇</div>
+      <div class="promo-sub">頂級純手工剪 🎁 已含頂級 SPA 療程</div>
+      <div class="promo-value-note">（市價 $600 起・已包含）</div>
+
+      <div class="promo-pick-label">✦ SPA 療程任選一款 ✦</div>
+      <div class="promo-options">
+        <div class="promo-option">
+          <h4>❄ 冰河淨膚排毛泥</h4>
+          <p>深層淨化・排除廢毛</p>
+        </div>
+        <div class="promo-option">
+          <h4>🌹 法國玫瑰活膚泥</h4>
+          <p>滋潤修護・煥活毛髮</p>
+        </div>
+      </div>
+      <div class="promo-price">＊純手工剪服務 $2,500 起</div>
+    </div>
+  </section>
+
+  <!-- PANEL 4: BOOKING -->
+  <section class="panel" id="booking">
+    <div class="panel-intro">
+      <div class="eyebrow">Reservation</div>
+      <div class="panel-title">預約表</div>
+      <p class="panel-sub">填寫毛孩資訊，一鍵送出至 LINE 或直接來電，我們將盡快與您確認時段。</p>
+    </div>
+
+    <div class="booking-shell">
+      <form id="booking-form">
+
+        <div class="form-section">
+          <div class="form-section-title"><span class="num-badge">1</span>基本資料</div>
+          <div class="form-grid">
+            <div class="field">
+              <label>毛孩姓名</label>
+              <input type="text" id="b-petname" placeholder="豆豆">
+            </div>
+            <div class="field">
+              <label>飼主姓名<span class="req">*</span></label>
+              <input type="text" id="b-name" placeholder="王小姐" required>
+            </div>
+            <div class="field">
+              <label>品種</label>
+              <input type="text" id="b-breed" placeholder="貴賓犬">
+            </div>
+            <div class="field">
+              <label>聯絡電話<span class="req">*</span></label>
+              <input type="tel" id="b-phone" placeholder="09XX-XXX-XXX" required>
+            </div>
+            <div class="field">
+              <label>體重（kg）</label>
+              <input type="number" id="b-weight" min="0" step="0.1" placeholder="4.5">
+            </div>
+            <div class="field">
+              <label>預約日期</label>
+              <input type="date" id="b-date">
+            </div>
+            <div class="field">
+              <label>性別</label>
+              <div class="choice-group">
+                <label class="choice"><input type="radio" name="b-gender" value="公">公</label>
+                <label class="choice"><input type="radio" name="b-gender" value="母">母</label>
+              </div>
+            </div>
+            <div class="field">
+              <label>預約時間</label>
+              <input type="time" id="b-time" min="10:00" max="19:00">
+            </div>
+          </div>
+        </div>
+
+        <div class="form-section">
+          <div class="form-section-title"><span class="num-badge">2</span>接送服務</div>
+          <label class="choice">
+            <input type="checkbox" id="b-pickup-need">需要接送服務（6 公里內免費）
+          </label>
+          <div class="field pickup-address-wrap" id="pickup-address-wrap" style="flex-direction:column;">
+            <label>接送地址</label>
+            <input type="text" id="b-address" placeholder="請輸入接送地址">
+          </div>
+        </div>
+
+        <div class="form-section">
+          <div class="form-section-title"><span class="num-badge">3</span>選擇服務項目</div>
+          <div class="choice-group">
+            <label class="choice"><input type="radio" name="b-service" value="小美容（$700起）">小美容（$700 起）</label>
+            <label class="choice"><input type="radio" name="b-service" value="大美容（$1,800起）">大美容（$1,800 起）</label>
+            <label class="choice"><input type="radio" name="b-service" value="頂級純手工剪（$2,500起）">頂級純手工剪（$2,500 起）</label>
+          </div>
+
+          <div class="spa-block" id="spa-included-block">
+            <div class="spa-block-title">✦ 頂級純手工剪．已含 SPA 療程 ✦</div>
+            <div class="spa-block-note">（選擇純手工剪者，請勾選 SPA 款式）</div>
+            <div class="choice-group">
+              <label class="choice"><input type="radio" name="b-spa-included" value="冰河淨膚排毛泥（深層淨化）">冰河淨膚排毛泥（深層淨化）</label>
+              <label class="choice"><input type="radio" name="b-spa-included" value="法國玫瑰活膚泥（滋潤修護）">法國玫瑰活膚泥（滋潤修護）</label>
+            </div>
+          </div>
+
+          <div class="spa-block" id="spa-addon-block">
+            <div class="spa-block-title">✦ 加購 SPA 療程 ✦</div>
+            <div class="spa-block-note">（小美容／大美容 可另行加購）</div>
+            <div class="choice-group">
+              <label class="choice"><input type="checkbox" name="b-spa-addon" value="冰河淨膚排毛泥">冰河淨膚排毛泥</label>
+              <label class="choice"><input type="checkbox" name="b-spa-addon" value="法國玫瑰活膚泥">法國玫瑰活膚泥</label>
+              <label class="choice"><input type="checkbox" name="b-spa-addon" value="植萃緩草本泥">植萃緩草本泥</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-section">
+          <div class="form-section-title"><span class="num-badge">4</span>會員與付款方式</div>
+          <label class="choice">
+            <input type="checkbox" id="b-is-member">我是樂林會員（全年美容享 9 折）
+          </label>
+          <div class="choice-group" style="margin-top:12px;">
+            <label class="choice"><input type="radio" name="b-payment" value="現金">現金</label>
+            <label class="choice"><input type="radio" name="b-payment" value="轉帳（匯款）">轉帳（匯款）</label>
+          </div>
+          <div class="info-box" id="transfer-note" style="display:none; margin-top:12px;">
+            <b>轉帳資訊將於 LINE 對話中提供</b>因實際美容金額需依毛孩體型與狀況現場確認，選擇「轉帳」者，樂林會在確認金額後於 LINE 私訊提供匯款帳號，請留意訊息通知。
+          </div>
+        </div>
+
+        <div class="form-section">
+          <div class="form-section-title"><span class="num-badge">5</span>其他事項</div>
+          <div class="form-grid">
+            <div class="field full">
+              <label>特殊需求／注意事項</label>
+              <input type="text" id="b-special" placeholder="例如：容易緊張、腳掌打結、皮膚敏感⋯">
+            </div>
+            <div class="field full">
+              <label>備註</label>
+              <textarea id="b-note" placeholder="其他想告訴我們的事"></textarea>
+            </div>
+          </div>
+        </div>
+
+        <div class="booking-actions">
+          <button type="button" class="btn btn-line" id="send-line">💬 用 LINE 送出預約</button>
+          <button type="button" class="btn btn-secondary" id="send-call">📞 直接致電預約</button>
+        </div>
+        <div class="form-status" id="form-status"></div>
+        <p class="booking-hint">點擊「用 LINE 送出預約」將開啟 LINE 並帶入您填寫的預約內容，傳送給樂林即完成送出；點擊「直接致電」則會撥打門市電話 0975-153-113。全預約制，實際時段與消費金額以門市確認為準，若選擇轉帳付款，匯款帳號將由樂林於 LINE 對話中提供；營業時間 10:00–19:00。</p>
+      </form>
+    </div>
+  </section>
+
+  <!-- PANEL 5: MEMBER SIGNUP -->
+  <section class="panel" id="member">
+    <div class="panel-intro">
+      <div class="eyebrow">Annual Membership</div>
+      <div class="panel-title">年費會員資料表</div>
+      <p class="panel-sub">年費 $1,000，享有全年專屬會員權益。</p>
+    </div>
+
+    <div class="member-hero">
+      <div class="member-badge">年費會員招募中</div>
+      <div class="member-price">$1,000<small>年費／每月僅需 $83｜零食禮包市值即超過 $2,400，輕鬆回本</small></div>
+
+      <div class="benefit-grid">
+        <div class="benefit-box">
+          <div class="b-icon">🎁</div>
+          <h4>每月零食禮包</h4>
+          <p>每月到店領取寵物零食禮包，共 12 份／年，市值 $200／份。</p>
+        </div>
+        <div class="benefit-box">
+          <div class="b-icon">✂️</div>
+          <h4>全年美容 9 折</h4>
+          <p>所有美容服務享 9 折，全年無限次使用。</p>
+        </div>
+        <div class="benefit-box">
+          <div class="b-icon">🎂</div>
+          <h4>生日 85 折</h4>
+          <p>毛孩生日當月，美容服務享 85 折。</p>
+        </div>
+        <div class="benefit-box">
+          <div class="b-icon">☆</div>
+          <h4>優先預約</h4>
+          <p>會員專屬預約時段，不怕約不到。</p>
+        </div>
+      </div>
+
+      <div class="referral-strip">推薦好友加入會員，當月零食禮包升級雙份 🎁🎁<br>好康一起享受，毛孩朋友一起來</div>
+      <div class="member-note" style="margin-top:14px;">年費 $1,000，年度回饋價值超過 $2,400，現在加入立即享有所有會員權益。</div>
+    </div>
+
+    <div class="booking-shell">
+      <form id="member-form">
+
+        <div class="form-section">
+          <div class="form-section-title"><span class="num-badge">1</span>飼主資料</div>
+          <div class="form-grid">
+            <div class="field">
+              <label>飼主姓名<span class="req">*</span></label>
+              <input type="text" id="m-owner" placeholder="王小姐" required>
+            </div>
+            <div class="field">
+              <label>聯絡電話<span class="req">*</span></label>
+              <input type="tel" id="m-phone" placeholder="09XX-XXX-XXX" required>
+            </div>
+            <div class="field">
+              <label>LINE ID</label>
+              <input type="text" id="m-line" placeholder="您的 LINE ID">
+            </div>
+            <div class="field">
+              <label>地址</label>
+              <input type="text" id="m-address" placeholder="通訊地址">
+            </div>
+          </div>
+        </div>
+
+        <div class="form-section">
+          <div class="form-section-title"><span class="num-badge">2</span>毛孩資料</div>
+          <div class="form-grid">
+            <div class="field">
+              <label>毛孩名字</label>
+              <input type="text" id="m-petname" placeholder="豆豆">
+            </div>
+            <div class="field">
+              <label>性別</label>
+              <div class="choice-group">
+                <label class="choice"><input type="radio" name="m-gender" value="公">公</label>
+                <label class="choice"><input type="radio" name="m-gender" value="母">母</label>
+              </div>
+            </div>
+            <div class="field">
+              <label>品種</label>
+              <input type="text" id="m-breed" placeholder="貴賓犬">
+            </div>
+            <div class="field">
+              <label>生日</label>
+              <input type="date" id="m-birthday">
+            </div>
+            <div class="field">
+              <label>體重（kg）</label>
+              <input type="number" id="m-weight" min="0" step="0.1" placeholder="4.5">
+            </div>
+          </div>
+          <div class="field full" style="margin-top:14px;">
+            <label>特殊需求／注意事項</label>
+            <textarea id="m-special" placeholder="毛孩的體質、病史或需要留意的地方"></textarea>
+          </div>
+        </div>
+
+        <div class="booking-actions">
+          <button type="button" class="btn btn-line" id="send-member-line">💬 用 LINE 送出申請</button>
+          <button type="button" class="btn btn-secondary" id="send-member-call">📞 致電洽詢</button>
+        </div>
+        <div class="form-status" id="member-status"></div>
+        <p class="booking-hint">送出後將帶您前往 LINE 完成申請，我們確認年費入帳後即完成會員開通；加入日期以到店開通當日起算，效期一年。</p>
+      </form>
+    </div>
+  </section>
+
+  <!-- PANEL 6: STAFF DASHBOARD -->
+  <section class="panel" id="staff">
+    <div class="panel-intro">
+      <div class="eyebrow">For Store Owner</div>
+      <div class="panel-title">店家查詢</div>
+      <p class="panel-sub">查詢本頁面送出的預約與會員申請名單。</p>
+    </div>
+
+    <div class="booking-shell">
+      <div class="staff-gate" id="staff-gate">
+        <div class="field">
+          <label>門市通關密碼</label>
+          <input type="password" id="staff-pass" placeholder="請輸入密碼">
+        </div>
+        <button type="button" class="btn btn-primary" id="staff-login" style="width:100%; justify-content:center;">登入查詢</button>
+        <p class="booking-hint" style="text-align:center;">此密碼僅作基本防誤入，非帳號加密機制；名單為所有開啟此頁面的訪客共用資料，請勿存放身分證字號等敏感資訊。</p>
+      </div>
+
+      <div id="staff-panel" style="display:none;">
+        <div class="staff-summary">
+          <div class="stat"><div class="n" id="stat-bookings">0</div><div class="l">預約單</div></div>
+          <div class="stat"><div class="n" id="stat-members">0</div><div class="l">會員申請</div></div>
+        </div>
+        <div class="staff-toolbar">
+          <button type="button" class="btn btn-secondary" id="staff-refresh">🔄 重新整理</button>
+          <button type="button" class="btn btn-secondary" id="staff-logout">🔒 登出</button>
+        </div>
+        <div class="staff-list" id="staff-list"></div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="contact">
+    <div class="contact-item">
+      <div class="contact-icon">📞</div>
+      <div><b>預約致電</b><span>0975-153-113</span></div>
+    </div>
+    <div class="contact-item">
+      <div class="contact-icon">💬</div>
+      <div><b>LINE 預約</b><span>@603lnrnb</span></div>
+    </div>
+    <div class="contact-item">
+      <div class="contact-icon">📍</div>
+      <div><b>地址</b><span>新竹縣新埔鎮壹山街128巷86號（壹山社區）</span></div>
+    </div>
+    <div class="contact-item">
+      <div class="contact-icon">🕐</div>
+      <div><b>營業時間</b><span>10:00 – 19:00</span></div>
+    </div>
+  </footer>
+
+</div>
+
+<button class="fab-book" id="fab-book"><span class="paw">🐾</span>立即預約</button>
+
+<script>
+  const buttons = document.querySelectorAll('.tab-btn');
+  const panels = document.querySelectorAll('.panel');
+  function activateTab(tabId){
+    buttons.forEach(b => b.classList.remove('active'));
+    panels.forEach(p => p.classList.remove('active'));
+    const btn = document.querySelector('.tab-btn[data-tab="'+tabId+'"]');
+    if(btn) btn.classList.add('active');
+    document.getElementById(tabId).classList.add('active');
+    window.scrollTo({top:0, behavior:'smooth'});
+  }
+
+  buttons.forEach(btn => {
+    btn.addEventListener('click', () => activateTab(btn.dataset.tab));
+  });
+
+  document.getElementById('fab-book').addEventListener('click', () => activateTab('booking'));
+
+  /* Toggle pickup address field */
+  const pickupCheckbox = document.getElementById('b-pickup-need');
+  const pickupWrap = document.getElementById('pickup-address-wrap');
+  pickupCheckbox.addEventListener('change', () => {
+    pickupWrap.classList.toggle('show', pickupCheckbox.checked);
+  });
+
+  /* Toggle SPA blocks based on chosen service (mirrors paper 預約表 logic) */
+  const spaIncludedBlock = document.getElementById('spa-included-block');
+  const spaAddonBlock = document.getElementById('spa-addon-block');
+  document.querySelectorAll('input[name="b-service"]').forEach(radio => {
+    radio.addEventListener('change', () => {
+      const val = radio.value;
+      spaIncludedBlock.classList.toggle('show', val.startsWith('頂級純手工剪'));
+      spaAddonBlock.classList.toggle('show', val.startsWith('小美容') || val.startsWith('大美容'));
+    });
+  });
+
+  /* Show a note when the customer picks bank transfer */
+  const transferNote = document.getElementById('transfer-note');
+  document.querySelectorAll('input[name="b-payment"]').forEach(radio => {
+    radio.addEventListener('change', () => {
+      const checked = document.querySelector('input[name="b-payment"]:checked');
+      transferNote.style.display = (checked && checked.value.startsWith('轉帳')) ? 'block' : 'none';
+    });
+  });
+
+  function collectBookingData(){
+    const petname = document.getElementById('b-petname').value.trim();
+    const name = document.getElementById('b-name').value.trim();
+    const breed = document.getElementById('b-breed').value.trim();
+    const phone = document.getElementById('b-phone').value.trim();
+    const weight = document.getElementById('b-weight').value.trim();
+    const date = document.getElementById('b-date').value;
+    const genderEl = document.querySelector('input[name="b-gender"]:checked');
+    const gender = genderEl ? genderEl.value : '';
+    const time = document.getElementById('b-time').value;
+
+    const pickupNeed = document.getElementById('b-pickup-need').checked;
+    const address = document.getElementById('b-address').value.trim();
+
+    const serviceEl = document.querySelector('input[name="b-service"]:checked');
+    const service = serviceEl ? serviceEl.value : '（未選擇）';
+
+    const spaIncludedEl = document.querySelector('input[name="b-spa-included"]:checked');
+    const spaIncluded = spaIncludedEl ? spaIncludedEl.value : '';
+
+    const spaAddons = Array.from(document.querySelectorAll('input[name="b-spa-addon"]:checked')).map(el => el.value);
+
+    const special = document.getElementById('b-special').value.trim();
+    const note = document.getElementById('b-note').value.trim();
+    const isMember = document.getElementById('b-is-member').checked;
+    const paymentEl = document.querySelector('input[name="b-payment"]:checked');
+    const payment = paymentEl ? paymentEl.value : '';
+
+    return {petname, name, breed, phone, weight, date, gender, time, pickupNeed, address, service, spaIncluded, spaAddons, special, note, isMember, payment};
+  }
+
+  function buildMessage(){
+    const d = collectBookingData();
+
+    let lines = ['【樂林預約單】', '── 1. 基本資料 ──'];
+    if(d.petname) lines.push('毛孩姓名：' + d.petname);
+    lines.push('飼主姓名：' + (d.name || '（未填寫）'));
+    if(d.breed) lines.push('品種：' + d.breed);
+    lines.push('聯絡電話：' + (d.phone || '（未填寫）'));
+    if(d.weight) lines.push('體重：' + d.weight + ' kg');
+    if(d.date) lines.push('預約日期：' + d.date);
+    if(d.gender) lines.push('性別：' + d.gender);
+    if(d.time) lines.push('預約時間：' + d.time);
+
+    lines.push('── 2. 接送服務 ──');
+    lines.push('接送服務：' + (d.pickupNeed ? '需要（6公里內免費）' : '不需要'));
+    if(d.pickupNeed && d.address) lines.push('接送地址：' + d.address);
+
+    lines.push('── 3. 選擇服務項目 ──');
+    lines.push('服務項目：' + d.service);
+    if(d.service.startsWith('頂級純手工剪') && d.spaIncluded) lines.push('已含 SPA 款式：' + d.spaIncluded);
+    if(d.spaAddons.length) lines.push('加購 SPA：' + d.spaAddons.join('、'));
+
+    lines.push('── 4. 會員與付款方式 ──');
+    lines.push('樂林會員：' + (d.isMember ? '是（享 9 折）' : '否'));
+    lines.push('付款方式：' + (d.payment || '（未選擇）'));
+
+    if(d.special) lines.push('特殊需求／注意事項：' + d.special);
+    if(d.note) lines.push('備註：' + d.note);
+
+    return lines.join('\n');
+  }
+
+  function validateRequired(){
+    const name = document.getElementById('b-name');
+    const phone = document.getElementById('b-phone');
+    let ok = true;
+    [name, phone].forEach(f => {
+      if(!f.value.trim()){ f.style.borderColor = '#c96a6a'; ok = false; }
+      else{ f.style.borderColor = ''; }
+    });
+    return ok;
+  }
+
+  const statusBox = document.getElementById('form-status');
+  function showStatus(msg, elId){
+    const box = elId ? document.getElementById(elId) : statusBox;
+    box.textContent = msg;
+    box.classList.add('show');
+  }
+
+  function makeId(prefix){
+    return prefix + '_' + Date.now() + '_' + Math.random().toString(36).slice(2, 7);
+  }
+
+  async function saveRecord(keyPrefix, data){
+    try{
+      const id = makeId(keyPrefix);
+      const record = Object.assign({id, createdAt: new Date().toISOString()}, data);
+      await window.storage.set(keyPrefix + ':' + id, JSON.stringify(record), true);
+      return true;
+    }catch(err){
+      console.error('儲存名單失敗', err);
+      return false;
+    }
+  }
+
+  document.getElementById('send-line').addEventListener('click', async () => {
+    if(!validateRequired()){
+      showStatus('請填寫飼主姓名與聯絡電話後再送出。');
+      return;
+    }
+    const data = collectBookingData();
+    const text = buildMessage();
+    const url = 'https://line.me/R/oaMessage/@603lnrnb/?' + new URLSearchParams({text}).toString();
+    window.open(url, '_blank');
+    await saveRecord('bookings', data);
+    showStatus('已為您開啟 LINE，請在對話中按下「傳送」完成預約送出；此筆預約也已加入店家查詢名單。');
+  });
+
+  document.getElementById('send-call').addEventListener('click', async () => {
+    const data = collectBookingData();
+    await saveRecord('bookings', data);
+    window.location.href = 'tel:0975153113';
+  });
+
+  /* ===== MEMBER SIGNUP ===== */
+  function collectMemberData(){
+    const owner = document.getElementById('m-owner').value.trim();
+    const phone = document.getElementById('m-phone').value.trim();
+    const lineId = document.getElementById('m-line').value.trim();
+    const address = document.getElementById('m-address').value.trim();
+    const petname = document.getElementById('m-petname').value.trim();
+    const genderEl = document.querySelector('input[name="m-gender"]:checked');
+    const gender = genderEl ? genderEl.value : '';
+    const breed = document.getElementById('m-breed').value.trim();
+    const birthday = document.getElementById('m-birthday').value;
+    const weight = document.getElementById('m-weight').value.trim();
+    const special = document.getElementById('m-special').value.trim();
+    return {owner, phone, lineId, address, petname, gender, breed, birthday, weight, special};
+  }
+
+  function buildMemberMessage(d){
+    let lines = ['【樂林年費會員申請】', '── 1. 飼主資料 ──'];
+    lines.push('飼主姓名：' + (d.owner || '（未填寫）'));
+    lines.push('聯絡電話：' + (d.phone || '（未填寫）'));
+    if(d.lineId) lines.push('LINE ID：' + d.lineId);
+    if(d.address) lines.push('地址：' + d.address);
+
+    lines.push('── 2. 毛孩資料 ──');
+    if(d.petname) lines.push('毛孩名字：' + d.petname);
+    if(d.breed) lines.push('品種：' + d.breed);
+    if(d.gender) lines.push('性別：' + d.gender);
+    if(d.weight) lines.push('體重：' + d.weight + ' kg');
+    if(d.birthday) lines.push('生日：' + d.birthday);
+    if(d.special) lines.push('特殊需求／注意事項：' + d.special);
+
+    lines.push('── 3. 會員資訊 ──');
+    lines.push('年費：$1,000（收款後開通，效期一年）');
+    return lines.join('\n');
+  }
+
+  function validateMemberRequired(){
+    const owner = document.getElementById('m-owner');
+    const phone = document.getElementById('m-phone');
+    let ok = true;
+    [owner, phone].forEach(f => {
+      if(!f.value.trim()){ f.style.borderColor = '#c96a6a'; ok = false; }
+      else{ f.style.borderColor = ''; }
+    });
+    return ok;
+  }
+
+  document.getElementById('send-member-line').addEventListener('click', async () => {
+    if(!validateMemberRequired()){
+      showStatus('請填寫飼主姓名與聯絡電話後再送出。', 'member-status');
+      return;
+    }
+    const data = collectMemberData();
+    const text = buildMemberMessage(data);
+    const url = 'https://line.me/R/oaMessage/@603lnrnb/?' + new URLSearchParams({text}).toString();
+    window.open(url, '_blank');
+    await saveRecord('members', data);
+    showStatus('已為您開啟 LINE，請在對話中按下「傳送」完成會員申請；此筆申請也已加入店家查詢名單。', 'member-status');
+  });
+
+  document.getElementById('send-member-call').addEventListener('click', async () => {
+    const data = collectMemberData();
+    await saveRecord('members', data);
+    window.location.href = 'tel:0975153113';
+  });
+
+  /* ===== STAFF DASHBOARD ===== */
+  // 提醒：以下密碼僅供基本防誤入使用，不是真正的帳號安全機制。
+  // 若要正式對外營運，建議改接真正的後台系統或加上伺服器端驗證。
+  const STAFF_PASSCODE = '153113';
+
+  function escapeHtml(str){
+    return String(str || '').replace(/[&<>"']/g, m => ({
+      '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#39;'
+    }[m]));
+  }
+
+  function formatTime(iso){
+    try{
+      const d = new Date(iso);
+      return d.toLocaleString('zh-TW', {month:'2-digit', day:'2-digit', hour:'2-digit', minute:'2-digit'});
+    }catch(e){ return ''; }
+  }
+
+  function renderBookingCard(r){
+    const title = escapeHtml(r.name || '（未填寫）') + (r.petname ? '．' + escapeHtml(r.petname) : '');
+    let body = [];
+    body.push('服務項目：' + escapeHtml(r.service || '—'));
+    if(r.spaIncluded) body.push('已含 SPA：' + escapeHtml(r.spaIncluded));
+    if(r.spaAddons && r.spaAddons.length) body.push('加購 SPA：' + escapeHtml(r.spaAddons.join('、')));
+    body.push('聯絡電話：' + escapeHtml(r.phone || '—'));
+    if(r.date) body.push('預約日期：' + escapeHtml(r.date) + (r.time ? ' ' + escapeHtml(r.time) : ''));
+    body.push('接送：' + (r.pickupNeed ? '需要' + (r.address ? '（' + escapeHtml(r.address) + '）' : '') : '不需要'));
+    body.push('付款方式：' + escapeHtml(r.payment || '未選擇'));
+    body.push('樂林會員：' + (r.isMember ? '是' : '否'));
+    if(r.special) body.push('特殊需求：' + escapeHtml(r.special));
+    if(r.note) body.push('備註：' + escapeHtml(r.note));
+
+    return '<div class="staff-card">' +
+      '<div class="staff-card-head"><b>' + title + '</b><span class="staff-tag">預約</span></div>' +
+      '<div>' + body.join('<br>') + '</div>' +
+      '<div class="staff-time">送出時間：' + formatTime(r.createdAt) + '</div>' +
+      '</div>';
+  }
+
+  function renderMemberCard(r){
+    const title = escapeHtml(r.owner || '（未填寫）') + (r.petname ? '．' + escapeHtml(r.petname) : '');
+    let body = [];
+    body.push('聯絡電話：' + escapeHtml(r.phone || '—'));
+    if(r.lineId) body.push('LINE ID：' + escapeHtml(r.lineId));
+    if(r.address) body.push('地址：' + escapeHtml(r.address));
+    if(r.breed) body.push('品種：' + escapeHtml(r.breed));
+    if(r.gender) body.push('性別：' + escapeHtml(r.gender));
+    if(r.weight) body.push('體重：' + escapeHtml(r.weight) + ' kg');
+    if(r.birthday) body.push('毛孩生日：' + escapeHtml(r.birthday));
+    if(r.special) body.push('特殊需求：' + escapeHtml(r.special));
+
+    return '<div class="staff-card">' +
+      '<div class="staff-card-head"><b>' + title + '</b><span class="staff-tag member">會員申請</span></div>' +
+      '<div>' + body.join('<br>') + '</div>' +
+      '<div class="staff-time">送出時間：' + formatTime(r.createdAt) + '</div>' +
+      '</div>';
+  }
+
+  async function loadStaffList(){
+    const listEl = document.getElementById('staff-list');
+    listEl.innerHTML = '<div class="staff-empty">載入中⋯</div>';
+    try{
+      const [bookingKeys, memberKeys] = await Promise.all([
+        window.storage.list('bookings:', true).catch(() => ({keys:[]})),
+        window.storage.list('members:', true).catch(() => ({keys:[]}))
+      ]);
+
+      const bkKeys = (bookingKeys && bookingKeys.keys) ? bookingKeys.keys : [];
+      const mbKeys = (memberKeys && memberKeys.keys) ? memberKeys.keys : [];
+
+      const bookingRecords = await Promise.all(bkKeys.map(async k => {
+        try{ const res = await window.storage.get(k, true); return res ? JSON.parse(res.value) : null; }
+        catch(e){ return null; }
+      }));
+      const memberRecords = await Promise.all(mbKeys.map(async k => {
+        try{ const res = await window.storage.get(k, true); return res ? JSON.parse(res.value) : null; }
+        catch(e){ return null; }
+      }));
+
+      const bookings = bookingRecords.filter(Boolean).sort((a,b) => (b.createdAt || '').localeCompare(a.createdAt || ''));
+      const members = memberRecords.filter(Boolean).sort((a,b) => (b.createdAt || '').localeCompare(a.createdAt || ''));
+
+      document.getElementById('stat-bookings').textContent = bookings.length;
+      document.getElementById('stat-members').textContent = members.length;
+
+      const cards = [];
+      bookings.forEach(r => cards.push({time: r.createdAt || '', html: renderBookingCard(r)}));
+      members.forEach(r => cards.push({time: r.createdAt || '', html: renderMemberCard(r)}));
+      cards.sort((a,b) => b.time.localeCompare(a.time));
+
+      listEl.innerHTML = cards.length ? cards.map(c => c.html).join('') : '<div class="staff-empty">目前尚無預約或會員申請紀錄。</div>';
+    }catch(err){
+      console.error('讀取名單失敗', err);
+      listEl.innerHTML = '<div class="staff-empty">讀取名單時發生問題，請按「重新整理」再試一次。</div>';
+    }
+  }
+
+  document.getElementById('staff-login').addEventListener('click', () => {
+    const val = document.getElementById('staff-pass').value.trim();
+    if(val === STAFF_PASSCODE){
+      document.getElementById('staff-gate').style.display = 'none';
+      document.getElementById('staff-panel').style.display = 'block';
+      loadStaffList();
+    }else{
+      document.getElementById('staff-pass').style.borderColor = '#c96a6a';
+    }
+  });
+
+  document.getElementById('staff-refresh').addEventListener('click', loadStaffList);
+
+  document.getElementById('staff-logout').addEventListener('click', () => {
+    document.getElementById('staff-panel').style.display = 'none';
+    document.getElementById('staff-gate').style.display = 'block';
+    document.getElementById('staff-pass').value = '';
+    document.getElementById('staff-pass').style.borderColor = '';
+  });
+</script>
+</body>
+</html>
