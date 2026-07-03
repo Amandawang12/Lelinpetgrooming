@@ -1172,6 +1172,21 @@
           </div>
         </div>
 
+       
+        <div class="form-section">
+          <div class="form-section-title"><span class="num-badge">3</span>轉帳資訊</div>
+          <div class="form-grid">
+            <div class="field">
+              <label>匯款日期</label>
+              <input type="date" id="m-transfer-date">
+            </div>
+            <div class="field">
+              <label>轉帳帳號後五碼</label>
+              <input type="text" id="m-transfer-last5" placeholder="例：12345" maxlength="5">
+            </div>
+          </div>
+        </div>
+
         <div class="booking-actions">
           <button type="button" class="btn btn-line" id="send-member-line">💬 用 LINE 送出申請</button>
           <button type="button" class="btn btn-secondary" id="send-member-call">📞 致電洽詢</button>
@@ -1411,7 +1426,9 @@
     const birthday = document.getElementById('m-birthday').value;
     const weight = document.getElementById('m-weight').value.trim();
     const special = document.getElementById('m-special').value.trim();
-    return {owner, phone, lineId, address, petname, gender, breed, birthday, weight, special};
+   const transferDate = document.getElementById('m-transfer-date').value;
+const transferLast5 = document.getElementById('m-transfer-last5').value.trim();
+return {owner, phone, lineId, address, petname, gender, breed, birthday, weight, special, transferDate, transferLast5};
   }
 
   function buildMemberMessage(d){
@@ -1428,8 +1445,11 @@
     if(d.weight) lines.push('體重：' + d.weight + ' kg');
     if(d.birthday) lines.push('生日：' + d.birthday);
     if(d.special) lines.push('特殊需求／注意事項：' + d.special);
+  lines.push('── 3. 轉帳資訊 ──');
+  if(d.transferDate) lines.push('匯款日期：' + d.transferDate);
+  if(d.transferLast5) lines.push('轉帳帳號後五碼：' + d.transferLast5);
 
-    lines.push('── 3. 會員資訊 ──');
+    lines.push('── 4. 會員資訊 ──');
     lines.push('年費：$1,000（收款後開通，效期一年）');
     return lines.join('\n');
   }
